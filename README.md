@@ -61,6 +61,6 @@ The app is **local-first** (data stays on the device), simple to use, and built 
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: React + Tailwind (for PWA) OR Flutter (for mobile).
+* **Frontend**: HTML + CSS+ JavaScript (for PWA) OR Flutter (for mobile).
 * **Database**: SQLite (local storage) → can scale later.
 * **Storage**: Offline-first (IndexedDB / on-device DB)
