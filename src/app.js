@@ -92,7 +92,9 @@ function handleCalculate(e) {
     alert('Please enter a valid income amount.');
     return;
   }
-  const results = calculateAllocations(income, allocationSet);
+  // Always use the latest saved allocations
+  const latestAllocations = loadAllocations();
+  const results = calculateAllocations(income, latestAllocations);
   renderResults(results, income);
 }
 
