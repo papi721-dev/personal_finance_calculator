@@ -92,9 +92,18 @@ function handleCalculate(e) {
     alert('Please enter a valid income amount.');
     return;
   }
-  // Always use the latest saved allocations
-  const latestAllocations = loadAllocations();
-  const results = calculateAllocations(income, latestAllocations);
+  // Use current form values if allocations form is present
+  let currentAllocations;
+  const allocForm = document.getElementById('allocations-form');
+  if (allocForm) {
+    const labels = Array.from(document.querySelectorAll('.alloc-label')).map(input => input.value.trim() || 'Unnamed');
+    const types = Array.from(document.querySelectorAll('.alloc-type')).map(sel => sel.value);
+    const values = Array.from(document.querySelectorAll('.alloc-value')).map((input, i) => types[i] === 'remainder' ? 0 : parseFloat(input.value) || 0);
+    currentAllocations = labels.map((label, i) => ({ label, type: types[i], value: values[i] }));
+  } else {
+    currentAllocations = loadAllocations();
+  }
+  const results = calculateAllocations(income, currentAllocations);
   renderResults(results, income);
 }
 
