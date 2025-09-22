@@ -13,7 +13,7 @@ The app is **local-first** (data stays on the device), simple to use, and built 
 * Keep it **lightweight, private, and offline-first** while allowing future extensions.
 * Make it easy for users to **reuse and adjust** their allocation presets for different income sources.
 
-## 🚀 Planned Features (MVP)
+## 🚀 Features (MVP)
 
 ### 1. Income Input
 
@@ -59,9 +59,8 @@ The app is **local-first** (data stays on the device), simple to use, and built 
 * Cloud sync / multi-device access.
 * Mobile app (Flutter) or offline-first PWA.
 
-## 🛠️ Tech Stack (proposed options)
+## 🛠️ Tech Stack
 
-* **Backend**: Python (Django REST) for API + rules engine.
 * **Frontend**: React + Tailwind (for PWA) OR Flutter (for mobile).
 * **Database**: SQLite (local storage) → can scale later.
 * **Storage**: Offline-first (IndexedDB / on-device DB)
